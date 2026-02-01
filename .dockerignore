@@ -1,0 +1,7 @@
+/.idea/
+/.next/
+/node_modules/
+/README.md
+/.gitignore
+/eslint.config.mjs
+/next-env.d.ts
