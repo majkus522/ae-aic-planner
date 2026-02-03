@@ -1,0 +1,14 @@
+{
+    "output": {
+        "item": "amethyst-powder",
+        "count": 1
+    },
+    "inputs": [
+        {
+            "item": "amethyst-fiber",
+            "count": 1
+        }
+    ],
+    "time": 2,
+    "machine": "shredding-unit"
+}

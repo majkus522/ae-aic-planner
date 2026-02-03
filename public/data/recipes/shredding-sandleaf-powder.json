@@ -1,0 +1,14 @@
+{
+    "output": {
+        "item": "sandleaf-powder",
+        "count": 3
+    },
+    "inputs": [
+        {
+            "item": "sandleaf",
+            "count": 1
+        }
+    ],
+    "time": 2,
+    "machine": "shredding-unit"
+}

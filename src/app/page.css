@@ -1,0 +1,16 @@
+main > section
+{
+    padding: 20px;
+}
+
+svg
+{
+    background-color: #232323;
+    font-size: 10px;
+}
+
+svg g img
+{
+    width: 100px;
+    height: 100px;
+}

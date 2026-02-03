@@ -1,0 +1,18 @@
+{
+    "output": {
+        "item": "cryston-powder",
+        "count": 1
+    },
+    "inputs": [
+        {
+            "item": "amethyst-powder",
+            "count": 2
+        },
+        {
+            "item": "sandleaf-powder",
+            "count": 1
+        }
+    ],
+    "time": 2,
+    "machine": "griding-unit"
+}

@@ -1,0 +1,14 @@
+{
+    "output": {
+        "item": "amethyst-fiber",
+        "count": 1
+    },
+    "inputs": [
+        {
+            "item": "amethyst-ore",
+            "count": 1
+        }
+    ],
+    "time": 2,
+    "machine": "refining-unit"
+}
