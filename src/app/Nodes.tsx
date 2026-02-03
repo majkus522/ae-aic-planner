@@ -29,8 +29,8 @@ function BasicNode(image: string, name: string, desc: string, x: number, y: numb
 			<rect width="100" height="100" x="0" y="0" fill="rgb(69,69,69)" ry="5" rx="5"></rect>
 			<rect width="100" height="30" x="0" y="70" fill="rgb(245,245,245)" ry="5" rx="5"></rect>
 			<image href={image} width="70" height="70" x="15" y="0"/>
-			<text x="50" y="82.5" text-anchor="middle">{name}</text>
-			<text x="50" y="95.5" text-anchor="middle">{desc}</text>
+			<text x="50" y="82.5" textAnchor="middle">{name}</text>
+			<text x="50" y="95.5" textAnchor="middle">{desc}</text>
 		</g>
 	);
 }

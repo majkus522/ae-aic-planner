@@ -1,12 +1,12 @@
 {
     "output": {
         "item": "amethyst-fiber",
-        "count": 1
+        "amount": 1
     },
     "inputs": [
         {
             "item": "amethyst-ore",
-            "count": 1
+            "amount": 1
         }
     ],
     "time": 2,

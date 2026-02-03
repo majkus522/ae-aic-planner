@@ -1,12 +1,12 @@
 {
     "output": {
         "item": "sandleaf-powder",
-        "count": 3
+        "amount": 3
     },
     "inputs": [
         {
             "item": "sandleaf",
-            "count": 1
+            "amount": 1
         }
     ],
     "time": 2,

@@ -1,32 +1,41 @@
 "use client"
 
 import "./page.css"
-import {getRecipes} from "@/app/filesystem";
-import {useState} from "react";
+import {JSX, useState} from "react";
 import {ItemNode, MachineNode} from "@/app/Nodes";
+import {Chain, ChainLink} from "@/app/common";
 
 export default function Home()
 {
-	const [data, setData] = useState();
+	const [chain, setChain] = useState<Chain>();
+
+	const items: JSX.Element[] = [];
+	let node: ChainLink | undefined = chain?.head;
+	let x = 1000;
+	while (node != null)
+	{
+		items.push(<ItemNode item={node.item} ratio={node.amount} x={x} key={`item-${node.item}-${x}`} />);
+		items.push(<MachineNode machine={node.recipe.machine} usage={node.usage} x={x - 150} key={`machine-${node.recipe.machine}-${x}`} />);
+		x -= 300;
+		node = node.left;
+	}
 
 	return (
 		<main>
 			<section>
-				<input type="number" onChange={async function (){
-					setData(JSON.stringify(await getRecipes("amethyst-powder")));
+				<input type="button" value="Click" onClick={async function (){
+					let chain = new Chain("cryston-powder", 30);
+					await chain.head.eval();
+					setChain(chain);
 				}}/>
 			</section>
 			<section>
-				<svg viewBox="0 0 994 600" xmlns="http://www.w3.org/2000/svg">
-					<ItemNode item="amethyst-ore" ratio={10}></ItemNode>
-					<MachineNode machine="refining-unit" usage={10} x={150}></MachineNode>
-					<ItemNode item="amethyst-fiber" ratio={10} x={300}></ItemNode>
-					<MachineNode machine="shredding-unit" usage={10} x={450}></MachineNode>
-					<ItemNode item="amethyst-powder" ratio={10} x={600}></ItemNode>
-				</svg>
+				{JSON.stringify(chain)}
 			</section>
 			<section>
-				{data}
+				<svg viewBox="0 0 1500 700" xmlns="http://www.w3.org/2000/svg">
+					{items}
+				</svg>
 			</section>
 		</main>
 	);
