@@ -17,7 +17,7 @@ export class Vector2
 	public x: number;
 	public y: number;
 
-	public constructor(x: number, y: number)
+	public constructor(x: number = 0, y: number = 0)
 	{
 		this.x = x;
 		this.y = y;
@@ -26,8 +26,13 @@ export class Vector2
 	public step(count: number, index: number): Vector2
 	{
 		if (count >= 2)
-			return new Vector2(this.x - 300, this.y + (index == 0 ? 150 : -150));
-		return new Vector2(this.x - 300, this.y);
+			return new Vector2(-300, index == 0 ? 150 : -150);
+		return new Vector2(-300, 0);
+	}
+
+	public add(input: Vector2): Vector2
+	{
+		return new Vector2(this.x + input.x, this.y + input.y);
 	}
 }
 
@@ -38,12 +43,12 @@ export class Chain
 	public constructor(item: string, amount: number)
 	{
 		this.nodes = [];
-		this.nodes.push(new ChainLink(item, amount, new Vector2(1400, 0)));
+		this.nodes.push(new ChainLink(item, amount, new Vector2()));
 	}
 
 	public async eval()
 	{
-		await this.nodes[0].eval(this, 0, -1);
+		await this.nodes[0].eval(this, 0, -1, false);
 	}
 }
 
@@ -54,9 +59,10 @@ export class ChainLink
 	public usage: number = 0;
 	public position: Vector2;
 	public machine: string = "";
-	private left: number = -1;
-	private right: number = -1;
+	public left: number = -1;
+	public right: number = -1;
 	private movedAlready: boolean = false;
+	private parent: number = -1;
 
 	public constructor(item: string, amount: number, position: Vector2)
 	{
@@ -65,38 +71,40 @@ export class ChainLink
 		this.position = position;
 	}
 
-	public async eval(chain: Chain, index: number, parent: number)
+	public async eval(chain: Chain, index: number, parent: number, side: boolean)
 	{
 		const recipes: Recipe[] = await getRecipes(this.item);
 		if (recipes.length == 0) return;
 		const recipe: Recipe = recipes[0];
 		this.machine = recipe.machine;
+		this.parent = parent;
 		this.usage = ((this.amount / recipe.output.amount) * recipe.time) / 60;
 		if (recipe.inputs != null)
 		{
-			if (recipe.inputs.length >= 2 && this.position.y != 0)
+			if (recipe.inputs.length >= 2 && this.parent > 0)
 			{
-				this.position.y += (this.position.y > 0 ? 150 : -150);
-				console.log(this.item);
-				await chain.nodes[parent].moveUp();
+				this.position.y *= 1.5;
+				await chain.nodes[parent].moveUp(side, index);
 			}
 			if (recipe.inputs[0] != null)
 			{
 				this.left = chain.nodes.push(new ChainLink(recipe.inputs[0].item, (this.amount / recipe.output.amount) * recipe.inputs[0].amount, this.position.step(recipe.inputs.length, 0))) - 1;
-				await chain.nodes[this.left].eval(chain, this.left, index);
+				await chain.nodes[this.left].eval(chain, this.left, index, parent >= 0 ? side : false);
 			}
 			if (recipe.inputs[1] != null)
 			{
 				this.right = chain.nodes.push(new ChainLink(recipe.inputs[1].item, (this.amount / recipe.output.amount) * recipe.inputs[1].amount, this.position.step(recipe.inputs.length, 1))) - 1;
-				await chain.nodes[this.right].eval(chain, this.right, index);
+				await chain.nodes[this.right].eval(chain, this.right, index, parent >= 0 ? side : true);
 			}
 		}
 	}
 
-	async moveUp()
+	public async moveUp(side: boolean, from: number)
 	{
-		if (this.position.y != 0)
-			this.position.y += ((this.position.y > 0 ? 150 : -150) * (this.movedAlready ? 0.5 : 1));
+		const base = from == this.right ? 150 : 300
+		const mult = side ? -1 : 1;
+		if (this.parent > 0 && !this.movedAlready)
+			this.position.y += base * mult;
 		this.movedAlready = true;
 	}
 }

@@ -2,24 +2,21 @@
 
 import "./page.css"
 import {JSX, useState} from "react";
-import {ItemNode, MachineNode} from "@/app/Nodes";
-import {Chain, ChainLink} from "@/app/common";
+import {GraphNode} from "@/app/Nodes";
+import {Chain, Vector2} from "@/app/common";
 
 const items: JSX.Element[] = [];
 
-function display(chain: Chain, index: number)
+function display(chain: Chain, index: number, position: Vector2)
 {
-	console.log(index);
-	console.log(chain);
 	if (chain.nodes[index] == null)
 		return;
-	items.push(<ItemNode item={chain.nodes[index].item} ratio={chain.nodes[index].amount} x={chain.nodes[index].position.x} y={chain.nodes[index].position.y} key={`${index}-item`} />);
-	items.push(<MachineNode machine={chain.nodes[index].machine} usage={chain.nodes[index].usage} x={chain.nodes[index].position.x - 150} y={chain.nodes[index].position.y} key={`${index}-machine`} />);
-	console.log(chain.nodes[index].left, chain.nodes[index].right);
+	const pos = chain.nodes[index].position.add(position);
+	items.push(<GraphNode item={chain.nodes[index].item} amount={chain.nodes[index].amount} machine={chain.nodes[index].machine} usage={chain.nodes[index].usage} x={pos.x} y={pos.y}/>)
 	if (chain.nodes[index].left > 0)
-		display(chain, chain.nodes[index].left);
+		display(chain, chain.nodes[index].left, pos);
 	if (chain.nodes[index].right > 0)
-		display(chain, chain.nodes[index].right);
+		display(chain, chain.nodes[index].right, pos);
 }
 
 export default function Home()
@@ -35,14 +32,14 @@ export default function Home()
 					setChain(chain);
 					while(items.length > 0)
 						items.pop();
-					display(chain, 0);
+					display(chain, 0, new Vector2(1400, 0));
 				}}/>
 			</section>
 			<section>
 				{JSON.stringify(chain)}
 			</section>
 			<section>
-				<svg viewBox="0 -700 1500 1400" xmlns="http://www.w3.org/2000/svg">
+				<svg viewBox="0 -900 1500 1400" xmlns="http://www.w3.org/2000/svg">
 					{items}
 				</svg>
 			</section>

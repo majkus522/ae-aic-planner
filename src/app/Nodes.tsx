@@ -1,25 +1,16 @@
-type ItemNodeProps = {
+type GraphNodeProps = {
 	item: string;
-	ratio: number;
-	x?: number;
-	y?: number;
-};
-
-type MachineNodeProps = {
+	amount: number;
 	machine: string;
 	usage: number;
-	x?: number;
-	y?: number;
+	x: number;
+	y: number;
 };
 
-export function ItemNode({item, ratio, x = 0, y = 0}: ItemNodeProps)
+export function GraphNode({item, amount, machine, usage, x, y}: GraphNodeProps)
 {
-	return BasicNode(`images/items/${item}.webp`, item, ratio + " / min", x, y);
-}
-
-export function MachineNode({machine, usage, x = 0, y = 0}: MachineNodeProps)
-{
-	return BasicNode(`images/machines/${machine}.webp`, machine, String(usage), x, y);
+	const nodes = [BasicNode(`images/items/${item}.webp`, item, amount + " / min", x, y), BasicNode(`images/machines/${machine}.webp`, machine, String(usage), x - 150, y)];
+	return <>{nodes}</>;
 }
 
 function BasicNode(image: string, name: string, desc: string, x: number, y: number)
