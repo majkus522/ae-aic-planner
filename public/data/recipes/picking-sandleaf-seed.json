@@ -1,0 +1,8 @@
+{
+	"output": {
+		"item": "sandleaf-seed",
+		"amount": 1
+	},
+	"time": 2,
+	"machine": "seed-picking-unit"
+}

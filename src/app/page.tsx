@@ -5,35 +5,37 @@ import {JSX, useState} from "react";
 import {ItemNode, MachineNode} from "@/app/Nodes";
 import {Chain, ChainLink} from "@/app/common";
 
-let items: JSX.Element[] = [];
-let index = 0;
+const items: JSX.Element[] = [];
 
-function display(node: ChainLink | undefined)
+function display(chain: Chain, index: number)
 {
-	if (node == null)
+	console.log(index);
+	console.log(chain);
+	if (chain.nodes[index] == null)
 		return;
-	items.push(<ItemNode item={node.item} ratio={node.amount} x={node.position.x} y={node.position.y} key={index} />);
-	items.push(<MachineNode machine={node.machine} usage={node.usage} x={node.position.x - 150} y={node.position.y} key={index + 1} />);
-	index += 2;
-	display(node.left);
-	index += 2;
-	display(node.right);
+	items.push(<ItemNode item={chain.nodes[index].item} ratio={chain.nodes[index].amount} x={chain.nodes[index].position.x} y={chain.nodes[index].position.y} key={`${index}-item`} />);
+	items.push(<MachineNode machine={chain.nodes[index].machine} usage={chain.nodes[index].usage} x={chain.nodes[index].position.x - 150} y={chain.nodes[index].position.y} key={`${index}-machine`} />);
+	console.log(chain.nodes[index].left, chain.nodes[index].right);
+	if (chain.nodes[index].left > 0)
+		display(chain, chain.nodes[index].left);
+	if (chain.nodes[index].right > 0)
+		display(chain, chain.nodes[index].right);
 }
 
 export default function Home()
 {
 	const [chain, setChain] = useState<Chain>();
-	display(chain?.head);
 
 	return (
 		<main>
 			<section>
 				<input type="button" value="Click" onClick={async function (){
 					let chain = new Chain("cryston-powder", 30);
-					await chain.head.eval();
+					await chain.eval();
 					setChain(chain);
 					while(items.length > 0)
 						items.pop();
+					display(chain, 0);
 				}}/>
 			</section>
 			<section>
