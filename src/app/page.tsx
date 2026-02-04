@@ -27,16 +27,13 @@ export default function Home()
 		<main>
 			<section>
 				<input type="button" value="Click" onClick={async function (){
-					let chain = new Chain("sandleaf-powder", 60);
+					const chain = new Chain("sandleaf-powder", 60);
 					await chain.eval();
 					setChain(chain);
 					while(items.length > 0)
 						items.pop();
 					display(chain, 0, new Vector2(1400, 0));
 				}}/>
-			</section>
-			<section>
-				{JSON.stringify(chain)}
 			</section>
 			<section>
 				<svg viewBox="0 -900 1500 1400" xmlns="http://www.w3.org/2000/svg">

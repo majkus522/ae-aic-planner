@@ -80,11 +80,10 @@ export class ChainLink
 		this.machine = recipe.machine;
 		this.parent = parent;
 		this.usage = ((this.amount / recipe.output.amount) * recipe.time) / 60;
-		let loops = products.filter(product => product.item == this.item);
+		const loops = products.filter(product => product.item == this.item);
 		if (loops.length > 0)
 		{
 			const ratio = chain.nodes[loops[0].node]?.amount / (chain.nodes[loops[0].node]?.amount + chain.nodes[loops[0].node]?.amount / ((chain.nodes[loops[0].node]?.amount / this.amount) - 1));
-			console.log(ratio);
 			let lIndex = index;
 			while (lIndex != loops[0].node)
 			{
