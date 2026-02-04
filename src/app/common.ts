@@ -48,7 +48,7 @@ export class Chain
 
 	public async eval()
 	{
-		await this.nodes[0].eval(this, 0, -1, false);
+		await this.nodes[0].eval(this, 0, -1, false, []);
 	}
 }
 
@@ -61,6 +61,7 @@ export class ChainLink
 	public machine: string = "";
 	public left: number = -1;
 	public right: number = -1;
+	public loop: boolean = false;
 	private movedAlready: boolean = false;
 	private parent: number = -1;
 
@@ -71,7 +72,7 @@ export class ChainLink
 		this.position = position;
 	}
 
-	public async eval(chain: Chain, index: number, parent: number, side: boolean)
+	public async eval(chain: Chain, index: number, parent: number, side: boolean, products: {item: string, node: number}[])
 	{
 		const recipes: Recipe[] = await getRecipes(this.item);
 		if (recipes.length == 0) return;
@@ -79,6 +80,22 @@ export class ChainLink
 		this.machine = recipe.machine;
 		this.parent = parent;
 		this.usage = ((this.amount / recipe.output.amount) * recipe.time) / 60;
+		let loops = products.filter(product => product.item == this.item);
+		if (loops.length > 0)
+		{
+			const ratio = chain.nodes[loops[0].node]?.amount / (chain.nodes[loops[0].node]?.amount + chain.nodes[loops[0].node]?.amount / ((chain.nodes[loops[0].node]?.amount / this.amount) - 1));
+			console.log(ratio);
+			let lIndex = index;
+			while (lIndex != loops[0].node)
+			{
+				await chain.nodes[lIndex].reeval(ratio);
+				lIndex = chain.nodes[lIndex].parent;
+			}
+			await chain.nodes[lIndex].reeval(ratio);
+			this.loop = true;
+			return;
+		}
+		products.push({item: this.item, node: index});
 		if (recipe.inputs != null)
 		{
 			if (recipe.inputs.length >= 2 && this.parent > 0)
@@ -89,12 +106,12 @@ export class ChainLink
 			if (recipe.inputs[0] != null)
 			{
 				this.left = chain.nodes.push(new ChainLink(recipe.inputs[0].item, (this.amount / recipe.output.amount) * recipe.inputs[0].amount, this.position.step(recipe.inputs.length, 0))) - 1;
-				await chain.nodes[this.left].eval(chain, this.left, index, parent >= 0 ? side : false);
+				await chain.nodes[this.left].eval(chain, this.left, index, parent >= 0 ? side : false, structuredClone(products));
 			}
 			if (recipe.inputs[1] != null)
 			{
 				this.right = chain.nodes.push(new ChainLink(recipe.inputs[1].item, (this.amount / recipe.output.amount) * recipe.inputs[1].amount, this.position.step(recipe.inputs.length, 1))) - 1;
-				await chain.nodes[this.right].eval(chain, this.right, index, parent >= 0 ? side : true);
+				await chain.nodes[this.right].eval(chain, this.right, index, parent >= 0 ? side : true, structuredClone(products));
 			}
 		}
 	}
@@ -106,5 +123,11 @@ export class ChainLink
 		if (this.parent > 0 && !this.movedAlready)
 			this.position.y += base * mult;
 		this.movedAlready = true;
+	}
+
+	public async reeval(ratio: number)
+	{
+		this.amount /= ratio;
+		this.usage /= ratio;
 	}
 }

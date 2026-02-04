@@ -5,11 +5,14 @@ type GraphNodeProps = {
 	usage: number;
 	x: number;
 	y: number;
+	loop: boolean;
 };
 
-export function GraphNode({item, amount, machine, usage, x, y}: GraphNodeProps)
+export function GraphNode({item, amount, machine, usage, x, y, loop}: GraphNodeProps)
 {
-	const nodes = [BasicNode(`images/items/${item}.webp`, item, amount + " / min", x, y), BasicNode(`images/machines/${machine}.webp`, machine, String(usage), x - 150, y)];
+	const nodes = [BasicNode(`images/items/${item}.webp`, item, amount + " / min", x, y)];
+	if (!loop)
+		nodes.push(BasicNode(`images/machines/${machine}.webp`, machine, String(usage), x - 150, y))
 	return <>{nodes}</>;
 }
 
