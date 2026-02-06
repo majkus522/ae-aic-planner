@@ -1,0 +1,18 @@
+{
+	"output": {
+		"item": "buck-capsule-b",
+		"amount": 1
+	},
+	"inputs": [
+		{
+			"item": "ferrium-bottle",
+			"amount": 10
+		},
+		{
+			"item": "buckflower-powder",
+			"amount": 10
+		}
+	],
+	"time": 10,
+	"machine": "filling-unit"
+}

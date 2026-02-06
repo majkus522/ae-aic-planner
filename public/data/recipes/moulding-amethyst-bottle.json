@@ -1,0 +1,14 @@
+{
+	"output": {
+		"item": "amethyst-bottle",
+		"amount": 1
+	},
+	"inputs": [
+		{
+			"item": "amethyst-fiber",
+			"amount": 2
+		}
+	],
+	"time": 2,
+	"machine": "moulding-unit"
+}

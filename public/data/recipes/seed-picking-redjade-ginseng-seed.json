@@ -1,0 +1,14 @@
+{
+	"output": {
+		"item": "redjade-ginseng-seed",
+		"amount": 2
+	},
+	"inputs": [
+		{
+			"item": "redjade-ginseng",
+			"amount": 1
+		}
+	],
+	"time": 2,
+	"machine": "seed-picking-unit"
+}

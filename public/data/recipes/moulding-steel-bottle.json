@@ -1,0 +1,14 @@
+{
+	"output": {
+		"item": "steel-bottle",
+		"amount": 1
+	},
+	"inputs": [
+		{
+			"item": "steel",
+			"amount": 2
+		}
+	],
+	"time": 2,
+	"machine": "moulding-unit"
+}

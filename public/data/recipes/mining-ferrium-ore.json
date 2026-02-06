@@ -1,0 +1,8 @@
+{
+	"output": {
+		"item": "ferrium-ore",
+		"amount": 1
+	},
+	"time": 3,
+	"machine": "miner"
+}

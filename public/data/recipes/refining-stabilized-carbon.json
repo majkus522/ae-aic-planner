@@ -1,0 +1,14 @@
+{
+	"output": {
+		"item": "stabilized-carbon",
+		"amount": 1
+	},
+	"inputs": [
+		{
+			"item": "dense-carbon-powder",
+			"amount": 1
+		}
+	],
+	"time": 2,
+	"machine": "refining-unit"
+}

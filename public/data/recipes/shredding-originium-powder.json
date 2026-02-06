@@ -1,0 +1,14 @@
+{
+	"output": {
+		"item": "originium-powder",
+		"amount": 1
+	},
+	"inputs": [
+		{
+			"item": "originium-ore",
+			"amount": 1
+		}
+	],
+	"time": 2,
+	"machine": "shredding-unit"
+}

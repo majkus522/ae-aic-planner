@@ -10,9 +10,9 @@ type GraphNodeProps = {
 
 export function GraphNode({item, amount, machine, usage, x, y, loop}: GraphNodeProps)
 {
-	const nodes = [BasicNode(`images/items/${item}.webp`, item, amount + " / min", x, y)];
+	const nodes = [BasicNode(`images/items/${item}.png`, item, amount + " / min", x, y)];
 	if (!loop)
-		nodes.push(BasicNode(`images/machines/${machine}.webp`, machine, String(usage), x - 150, y))
+		nodes.push(BasicNode(`images/machines/${machine}.png`, machine, String(usage), x - 150, y))
 	return <>{nodes}</>;
 }
 

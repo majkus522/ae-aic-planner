@@ -1,0 +1,18 @@
+{
+    "output": {
+        "item": "ferrium-component",
+        "amount": 1
+    },
+    "inputs": [
+        {
+            "item": "origocrust",
+            "amount": 10
+        },
+        {
+            "item": "ferrium",
+            "amount": 10
+        }
+    ],
+    "time": 10,
+    "machine": "gearing-unit"
+}

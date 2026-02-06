@@ -1,0 +1,14 @@
+{
+	"output": {
+		"item": "jincao-powder",
+		"amount": 2
+	},
+	"inputs": [
+		{
+			"item": "jincao",
+			"amount": 1
+		}
+	],
+	"time": 2,
+	"machine": "shredding-unit"
+}

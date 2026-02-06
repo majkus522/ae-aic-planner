@@ -1,0 +1,14 @@
+{
+	"output": {
+		"item": "origocrust-powder",
+		"amount": 1
+	},
+	"inputs": [
+		{
+			"item": "origocrust",
+			"amount": 1
+		}
+	],
+	"time": 2,
+	"machine": "shredding-unit"
+}

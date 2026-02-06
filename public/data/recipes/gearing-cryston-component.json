@@ -1,0 +1,18 @@
+{
+    "output": {
+        "item": "cryston-component",
+        "amount": 1
+    },
+    "inputs": [
+        {
+            "item": "packed-origocrust",
+            "amount": 10
+        },
+        {
+            "item": "cryston-fiber",
+            "amount": 10
+        }
+    ],
+    "time": 10,
+    "machine": "gearing-unit"
+}

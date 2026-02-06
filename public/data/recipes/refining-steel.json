@@ -1,0 +1,14 @@
+{
+	"output": {
+		"item": "steel",
+		"amount": 1
+	},
+	"inputs": [
+		{
+			"item": "dense-ferrium-powder",
+			"amount": 1
+		}
+	],
+	"time": 2,
+	"machine": "refining-unit"
+}

@@ -1,0 +1,14 @@
+{
+	"output": {
+		"item": "yazhen-seed",
+		"amount": 1
+	},
+	"inputs": [
+		{
+			"item": "yazhen",
+			"amount": 1
+		}
+	],
+	"time": 2,
+	"machine": "seed-picking-unit"
+}

@@ -1,0 +1,18 @@
+{
+	"output": {
+		"item": "buck-capsule-a",
+		"amount": 1
+	},
+	"inputs": [
+		{
+			"item": "steel-bottle",
+			"amount": 10
+		},
+		{
+			"item": "ground-buckflower-powder",
+			"amount": 10
+		}
+	],
+	"time": 10,
+	"machine": "filling-unit"
+}

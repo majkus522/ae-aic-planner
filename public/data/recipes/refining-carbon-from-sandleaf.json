@@ -1,0 +1,14 @@
+{
+	"output": {
+		"item": "carbon",
+		"amount": 1
+	},
+	"inputs": [
+		{
+			"item": "sandleaf",
+			"amount": 1
+		}
+	],
+	"time": 2,
+	"machine": "refining-unit"
+}

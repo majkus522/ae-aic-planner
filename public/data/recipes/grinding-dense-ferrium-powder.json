@@ -1,0 +1,18 @@
+{
+    "output": {
+        "item": "dense-ferrium-powder",
+        "amount": 1
+    },
+    "inputs": [
+        {
+            "item": "ferrium-powder",
+            "amount": 2
+        },
+        {
+            "item": "sandleaf-powder",
+            "amount": 1
+        }
+    ],
+    "time": 2,
+    "machine": "grinding-unit"
+}

@@ -1,0 +1,18 @@
+{
+	"output": {
+		"item": "lc-wulling-battery",
+		"amount": 1
+	},
+	"inputs": [
+		{
+			"item": "xiranite",
+			"amount": 5
+		},
+		{
+			"item": "dense-originium-powder",
+			"amount": 15
+		}
+	],
+	"time": 10,
+	"machine": "filling-unit"
+}

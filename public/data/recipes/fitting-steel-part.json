@@ -1,0 +1,14 @@
+{
+	"output": {
+		"item": "steel-part",
+		"amount": 1
+	},
+	"inputs": [
+		{
+			"item": "steel",
+			"amount": 1
+		}
+	],
+	"time": 2,
+	"machine": "fitting-unit"
+}

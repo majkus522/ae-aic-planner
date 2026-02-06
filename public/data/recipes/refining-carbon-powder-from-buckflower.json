@@ -1,0 +1,14 @@
+{
+	"output": {
+		"item": "carbon-powder",
+		"amount": 1
+	},
+	"inputs": [
+		{
+			"item": "buckflower-powder",
+			"amount": 1
+		}
+	],
+	"time": 2,
+	"machine": "refining-unit"
+}

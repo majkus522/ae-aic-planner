@@ -1,0 +1,18 @@
+{
+    "output": {
+        "item": "ground-buckflower-powder",
+        "amount": 1
+    },
+    "inputs": [
+        {
+            "item": "buckflower-powder",
+            "amount": 2
+        },
+        {
+            "item": "sandleaf-powder",
+            "amount": 1
+        }
+    ],
+    "time": 2,
+    "machine": "grinding-unit"
+}

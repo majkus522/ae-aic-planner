@@ -1,0 +1,14 @@
+{
+	"output": {
+		"item": "citrome",
+		"amount": 1
+	},
+	"inputs": [
+		{
+			"item": "citrome-seed",
+			"amount": 1
+		}
+	],
+	"time": 2,
+	"machine": "planting-unit"
+}

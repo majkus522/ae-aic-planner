@@ -1,0 +1,14 @@
+{
+	"output": {
+		"item": "jincao-seed",
+		"amount": 1
+	},
+	"inputs": [
+		{
+			"item": "jincao",
+			"amount": 1
+		}
+	],
+	"time": 2,
+	"machine": "seed-picking-unit"
+}

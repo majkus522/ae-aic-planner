@@ -1,0 +1,14 @@
+{
+	"output": {
+		"item": "reed-rye-seed",
+		"amount": 2
+	},
+	"inputs": [
+		{
+			"item": "reed-rye",
+			"amount": 1
+		}
+	],
+	"time": 2,
+	"machine": "seed-picking-unit"
+}

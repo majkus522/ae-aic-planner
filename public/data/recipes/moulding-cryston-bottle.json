@@ -1,0 +1,14 @@
+{
+	"output": {
+		"item": "cryston-bottle",
+		"amount": 1
+	},
+	"inputs": [
+		{
+			"item": "cryston",
+			"amount": 2
+		}
+	],
+	"time": 2,
+	"machine": "moulding-unit"
+}

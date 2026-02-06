@@ -1,0 +1,14 @@
+{
+	"output": {
+		"item": "amber-rice-seed",
+		"amount": 2
+	},
+	"inputs": [
+		{
+			"item": "amber-rice",
+			"amount": 1
+		}
+	],
+	"time": 2,
+	"machine": "seed-picking-unit"
+}

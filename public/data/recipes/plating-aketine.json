@@ -1,0 +1,14 @@
+{
+	"output": {
+		"item": "aketine",
+		"amount": 1
+	},
+	"inputs": [
+		{
+			"item": "aketine-seed",
+			"amount": 1
+		}
+	],
+	"time": 2,
+	"machine": "planting-unit"
+}

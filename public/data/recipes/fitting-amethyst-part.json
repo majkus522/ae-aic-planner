@@ -1,0 +1,14 @@
+{
+	"output": {
+		"item": "amethyst-part",
+		"amount": 1
+	},
+	"inputs": [
+		{
+			"item": "amethyst-fiber",
+			"amount": 1
+		}
+	],
+	"time": 2,
+	"machine": "fitting-unit"
+}

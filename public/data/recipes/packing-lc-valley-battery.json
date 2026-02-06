@@ -1,0 +1,18 @@
+{
+	"output": {
+		"item": "lc-valley-battery",
+		"amount": 1
+	},
+	"inputs": [
+		{
+			"item": "amethyst-part",
+			"amount": 5
+		},
+		{
+			"item": "originium-powder",
+			"amount": 10
+		}
+	],
+	"time": 10,
+	"machine": "filling-unit"
+}

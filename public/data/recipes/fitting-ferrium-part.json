@@ -1,0 +1,14 @@
+{
+	"output": {
+		"item": "ferrium-part",
+		"amount": 1
+	},
+	"inputs": [
+		{
+			"item": "ferrium",
+			"amount": 1
+		}
+	],
+	"time": 2,
+	"machine": "fitting-unit"
+}

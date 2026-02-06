@@ -1,0 +1,14 @@
+{
+	"output": {
+		"item": "dense-origocrust-powder",
+		"amount": 1
+	},
+	"inputs": [
+		{
+			"item": "dense-originium-powder",
+			"amount": 1
+		}
+	],
+	"time": 2,
+	"machine": "refining-unit"
+}

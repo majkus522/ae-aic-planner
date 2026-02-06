@@ -1,0 +1,18 @@
+{
+	"output": {
+		"item": "yazhen",
+		"amount": 2
+	},
+	"inputs": [
+		{
+			"item": "yazhen-seed",
+			"amount": 1
+		},
+		{
+			"item": "clean-water",
+			"amount": 1
+		}
+	],
+	"time": 2,
+	"machine": "planting-unit"
+}

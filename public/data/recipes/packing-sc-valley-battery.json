@@ -1,0 +1,18 @@
+{
+	"output": {
+		"item": "sc-valley-battery",
+		"amount": 1
+	},
+	"inputs": [
+		{
+			"item": "ferrium-part",
+			"amount": 10
+		},
+		{
+			"item": "originium-powder",
+			"amount": 10
+		}
+	],
+	"time": 10,
+	"machine": "filling-unit"
+}

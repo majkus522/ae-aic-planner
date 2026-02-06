@@ -1,0 +1,18 @@
+{
+	"output": {
+		"item": "industrial-explosive",
+		"amount": 1
+	},
+	"inputs": [
+		{
+			"item": "amethyst-part",
+			"amount": 5
+		},
+		{
+			"item": "aketine-powder",
+			"amount": 1
+		}
+	],
+	"time": 10,
+	"machine": "filling-unit"
+}

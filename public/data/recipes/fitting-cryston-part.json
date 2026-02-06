@@ -1,0 +1,14 @@
+{
+	"output": {
+		"item": "cryston-part",
+		"amount": 1
+	},
+	"inputs": [
+		{
+			"item": "cryston",
+			"amount": 1
+		}
+	],
+	"time": 2,
+	"machine": "fitting-unit"
+}

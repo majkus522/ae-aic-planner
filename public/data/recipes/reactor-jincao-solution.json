@@ -1,0 +1,18 @@
+{
+    "output": {
+        "item": "jincao-solution",
+        "amount": 1
+    },
+    "inputs": [
+        {
+            "item": "jincao-powder",
+            "amount": 1
+        },
+        {
+            "item": "clean-water",
+            "amount": 1
+        }
+    ],
+    "time": 2,
+    "machine": "reactor-crucible"
+}

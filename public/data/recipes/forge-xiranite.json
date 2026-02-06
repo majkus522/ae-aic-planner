@@ -1,0 +1,18 @@
+{
+    "output": {
+        "item": "xiranite",
+        "amount": 1
+    },
+    "inputs": [
+        {
+            "item": "stabilized-carbon",
+            "amount": 2
+        },
+        {
+            "item": "clean-water",
+            "amount": 1
+        }
+    ],
+    "time": 2,
+    "machine": "forge-of-the-sky"
+}

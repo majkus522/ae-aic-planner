@@ -1,0 +1,14 @@
+{
+	"output": {
+		"item": "buckflower-seed",
+		"amount": 2
+	},
+	"inputs": [
+		{
+			"item": "buckflower",
+			"amount": 1
+		}
+	],
+	"time": 2,
+	"machine": "seed-picking-unit"
+}

@@ -1,0 +1,14 @@
+{
+	"output": {
+		"item": "aketanie-powder",
+		"amount": 2
+	},
+	"inputs": [
+		{
+			"item": "aketanie",
+			"amount": 1
+		}
+	],
+	"time": 2,
+	"machine": "shredding-unit"
+}

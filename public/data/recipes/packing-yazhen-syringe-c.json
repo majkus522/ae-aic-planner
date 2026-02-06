@@ -1,0 +1,18 @@
+{
+	"output": {
+		"item": "yazhen-syringe-c",
+		"amount": 1
+	},
+	"inputs": [
+		{
+			"item": "ferrium-part",
+			"amount": 10
+		},
+		{
+			"item": "ferrium-bottle-yazhen-solution",
+			"amount": 5
+		}
+	],
+	"time": 10,
+	"machine": "filling-unit"
+}
