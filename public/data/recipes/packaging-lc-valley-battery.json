@@ -1,12 +1,12 @@
 {
 	"output": {
-		"item": "sc-valley-battery",
+		"item": "lc-valley-battery",
 		"amount": 1
 	},
 	"inputs": [
 		{
-			"item": "ferrium-part",
-			"amount": 10
+			"item": "amethyst-part",
+			"amount": 5
 		},
 		{
 			"item": "originium-powder",
@@ -14,5 +14,5 @@
 		}
 	],
 	"time": 10,
-	"machine": "filling-unit"
+	"machine": "packaging-unit"
 }

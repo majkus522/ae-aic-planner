@@ -1,12 +1,12 @@
 {
 	"output": {
-		"item": "hc-valley-battery",
+		"item": "lc-wulling-battery",
 		"amount": 1
 	},
 	"inputs": [
 		{
-			"item": "steel-part",
-			"amount": 10
+			"item": "xiranite",
+			"amount": 5
 		},
 		{
 			"item": "dense-originium-powder",
@@ -14,5 +14,5 @@
 		}
 	],
 	"time": 10,
-	"machine": "filling-unit"
+	"machine": "packaging-unit"
 }

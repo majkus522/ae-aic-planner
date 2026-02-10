@@ -1,6 +1,6 @@
 {
 	"output": {
-		"item": "jincao-drink",
+		"item": "sc-valley-battery",
 		"amount": 1
 	},
 	"inputs": [
@@ -9,10 +9,10 @@
 			"amount": 10
 		},
 		{
-			"item": "ferrium-bottle-jincao-solution",
-			"amount": 5
+			"item": "originium-powder",
+			"amount": 10
 		}
 	],
 	"time": 10,
-	"machine": "filling-unit"
+	"machine": "packaging-unit"
 }
