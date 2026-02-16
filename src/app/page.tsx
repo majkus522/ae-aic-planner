@@ -1,7 +1,7 @@
 "use client"
 
 import "./page.css"
-import {JSX, useState} from "react";
+import {JSX, useRef, useState} from "react";
 import {GraphNode} from "@/app/Nodes";
 import {Chain, Vector2} from "@/app/common";
 
@@ -22,6 +22,33 @@ function display(chain: Chain, index: number, position: Vector2)
 export default function Home()
 {
 	const [chain, setChain] = useState<Chain>();
+	const svgRef = useRef(null);
+	const [startPos, setStartPos] = useState<Vector2>(new Vector2(0, 0));
+	const [pos, setPos] = useState<Vector2>(new Vector2(0, 0));
+	const [dragging, setDragging] = useState<boolean>(false);
+
+	const getSVGPoint = (event) => {
+		const svg = svgRef.current;
+		const pt = svg.createSVGPoint();
+		pt.x = event.clientX;
+		pt.y = event.clientY;
+		return pt.matrixTransform(svg.getScreenCTM().inverse());
+	};
+
+	const handleMouseMove = (event) => {
+		if (!dragging)
+			return;
+		const coords = getSVGPoint(event);
+		console.log(startPos.add(new Vector2(-coords.x, -coords.y)));
+		setPos(pos.add(startPos.add(new Vector2(-coords.x, -coords.y))));
+		setStartPos(new Vector2(coords.x, coords.y));
+	};
+
+	const startDragging = (event) => {
+		setDragging(true);
+		const coords = getSVGPoint(event);
+		setStartPos(new Vector2(coords.x, coords.y));
+	};
 
 	return (
 		<main>
@@ -33,11 +60,14 @@ export default function Home()
 					while(items.length > 0)
 						items.pop();
 					display(chain, 0, new Vector2(1400, 0));
+					setPos(new Vector2(0, 0));
 				}}/>
 			</section>
 			<section>
-				<svg viewBox="0 -900 1500 1400" xmlns="http://www.w3.org/2000/svg">
-					{items}
+				<svg ref={svgRef} viewBox="0 -900 1500 1400" xmlns="http://www.w3.org/2000/svg" onMouseMove={handleMouseMove} onMouseUp={() => setDragging(false)} onMouseDown={startDragging}>
+					<g transform={`translate(${-pos.x}, ${-pos.y})`}>
+						{items}
+					</g>
 				</svg>
 			</section>
 		</main>
