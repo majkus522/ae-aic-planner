@@ -5,11 +5,11 @@
     },
     "inputs": [
         {
-            "item": "yazhen-powder",
+            "item": "clean-water",
             "amount": 1
         },
         {
-            "item": "clean-water",
+            "item": "yazhen-powderS",
             "amount": 1
         }
     ],

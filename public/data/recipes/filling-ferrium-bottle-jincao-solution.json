@@ -1,0 +1,18 @@
+{
+	"output": {
+		"item": "ferrium-bottle-jincao-solution",
+		"amount": 1
+	},
+	"inputs": [
+		{
+			"item": "ferrium-bottle",
+			"amount": 1
+		},
+		{
+			"item": "jincao-solution",
+			"amount": 1
+		}
+	],
+	"time": 2,
+	"machine": "filling-unit"
+}

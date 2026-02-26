@@ -1,0 +1,18 @@
+{
+	"output": {
+		"item": "ferrium-bottle-liquid-xiranite",
+		"amount": 1
+	},
+	"inputs": [
+		{
+			"item": "ferrium-bottle",
+			"amount": 1
+		},
+		{
+			"item": "liquid-xiranite",
+			"amount": 1
+		}
+	],
+	"time": 2,
+	"machine": "filling-unit"
+}
