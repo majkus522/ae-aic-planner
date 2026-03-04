@@ -9,3 +9,14 @@ export type Recipe = {
 	time: number;
 	machine: string;
 };
+
+export type ItemData = {
+	name: string;
+	description: string;
+};
+
+export type MachineData = {
+	name: string;
+	description: string;
+	power: number;
+}
