@@ -1,11 +1,11 @@
 {
 	"output": {
-		"item": "aketanie-powder",
+		"item": "aketine-powder",
 		"amount": 2
 	},
 	"inputs": [
 		{
-			"item": "aketanie",
+			"item": "aketine",
 			"amount": 1
 		}
 	],
