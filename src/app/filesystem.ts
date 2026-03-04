@@ -2,7 +2,7 @@
 
 import { promises as fs } from 'fs';
 import path from 'path'
-import {Recipe} from "@/app/common";
+import {Recipe} from "@/app/common/types";
 
 export async function getRecipes(item: string): Promise<Recipe[]>
 {

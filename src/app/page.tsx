@@ -3,11 +3,12 @@
 import "./page.css"
 import {JSX, useRef, useState} from "react";
 import {GraphNode} from "@/app/Nodes";
-import {Chain, Vector2} from "@/app/common";
+import {Vector2} from "@/app/common/Vector2";
+import {ProductionChain} from "@/app/common/ProductionChain";
 
 const items: JSX.Element[] = [];
 
-function display(chain: Chain, index: number, position: Vector2)
+function display(chain: ProductionChain, index: number, position: Vector2)
 {
 	if (chain.nodes[index] == null)
 		return;
@@ -21,7 +22,7 @@ function display(chain: Chain, index: number, position: Vector2)
 
 export default function Home()
 {
-	const [chain, setChain] = useState<Chain>();
+	const [chain, setChain] = useState<ProductionChain>();
 	const svgRef = useRef(null);
 	const [startPos, setStartPos] = useState<Vector2>(new Vector2(0, 0));
 	const [pos, setPos] = useState<Vector2>(new Vector2(0, 0));
@@ -54,7 +55,7 @@ export default function Home()
 		<main>
 			<section>
 				<input type="button" value="Click" onClick={async function (){
-					const chain = new Chain("sandleaf-powder", 60);
+					const chain = new ProductionChain("sandleaf-powder", 60);
 					await chain.eval();
 					setChain(chain);
 					while(items.length > 0)
