@@ -1,5 +1,5 @@
 {
-	"name": "ae-pac-planner",
+	"name": "ae-aic-planner",
 	"version": "0.1.0",
 	"private": true,
 	"scripts": {
@@ -15,11 +15,11 @@
 		"react-dom": "19.2.3"
 	},
 	"devDependencies": {
-		"@types/node": "^20.19.30",
-		"@types/react": "^19.2.10",
+		"@types/node": "^20.19.35",
+		"@types/react": "^19.2.14",
 		"@types/react-dom": "^19.2.3",
 		"ava": "^6.4.1",
-		"eslint": "^9.39.2",
+		"eslint": "^9.39.3",
 		"eslint-config-next": "16.1.6",
 		"tsimp": "^2.0.12",
 		"typescript": "^5.9.3"
