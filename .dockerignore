@@ -6,3 +6,6 @@ README.md
 eslint.config.mjs
 next-env.d.ts
 .tsimp
+.github
+.vscode
+.git

@@ -4,8 +4,11 @@ COPY package*.json tsconfig.json next.config.js ./
 
 FROM base AS builder
 RUN npm install
-COPY src ./
+COPY src ./src
 RUN npm run build
+COPY tests ./tests
+COPY public public
+RUN npm run test
 
 FROM base AS runner
 EXPOSE 3000

@@ -2,8 +2,8 @@
   <configuration default="false" name="Run Docker" type="docker-deploy" factoryName="dockerfile" server-name="Docker">
     <deployment type="dockerfile">
       <settings>
-        <option name="imageTag" value="ae-pac-planner" />
-        <option name="containerName" value="ae-pac-planner" />
+        <option name="imageTag" value="ae-aic-planner" />
+        <option name="containerName" value="ae-aic-planner" />
         <option name="portBindings">
           <list>
             <DockerPortBindingImpl>
