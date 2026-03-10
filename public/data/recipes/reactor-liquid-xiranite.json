@@ -1,11 +1,11 @@
 {
     "output": {
-        "item": "xiranite-solution",
+        "item": "liquid-xiranite",
         "amount": 1
     },
     "inputs": [
         {
-            "item": "xiranite-powder",
+            "item": "xiranite",
             "amount": 1
         },
         {
